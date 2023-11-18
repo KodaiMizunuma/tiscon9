@@ -13,43 +13,43 @@ import javax.validation.constraints.NotNull;
  */
 public class UserOrderForm {
 
-    @NotBlank
+    @NotBlank(message = "名前が入力されていません")
     private String customerName;
 
-    @NotBlank
-    @Numeric
+    @NotBlank(message = "電話番号が入力されていません")
+    @Numeric(message = "電話番号が半角数字で入力されていません")
     private String tel;
 
-    @Email
-    @NotBlank
+    @Email(message = "メールアドレス形式ではありません")
+    @NotBlank(message = "メールアドレスが入力されていません")
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "集荷元住所（都道府県）が入力されていません")
     private String oldPrefectureId;
 
-    @NotBlank
+    @NotBlank(message = "集荷元住所（市区町村以下）が入力されていません")
     private String oldAddress;
 
-    @NotBlank
+    @NotBlank(message = "お届け先住所（都道府県）が入力されていません")
     private String newPrefectureId;
 
-    @NotBlank
+    @NotBlank(message = "お届け先住所（市区町村以下）が入力されていません")
     private String newAddress;
 
-    @Numeric
-    @NotBlank
+    @Numeric(message = "段ボールの個数が半角数字で入力されていません")
+    @NotBlank(message = "段ボールの個数が入力されていません")
     private String box;
 
-    @Numeric
-    @NotBlank
+    @Numeric(message = "ベッドの個数が半角数字で入力されていません")
+    @NotBlank(message = "ベッドの個数が入力されていません")
     private String bed;
 
-    @Numeric
-    @NotBlank
+    @Numeric(message = "自転車の個数が半角数字で入力されていません")
+    @NotBlank(message = "自転車の個数が入力されていません")
     private String bicycle;
 
-    @Numeric
-    @NotBlank
+    @Numeric(message = "洗濯機の個数が半角数字で入力されていません")
+    @NotBlank(message = "洗濯機の個数が入力されていません")
     private String washingMachine;
 
     @NotNull
