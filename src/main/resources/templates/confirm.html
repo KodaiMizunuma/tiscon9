@@ -63,6 +63,11 @@
         <col span="2" style="background-color: #FFFFFF;">
         <tbody>
         <tr>
+          <th>郵便番号</th>
+          <td><span th:text="*{postcode}"></span></td>
+          <input type="hidden" name="postcode" id="postcode" th:value="*{postcode}"/>
+        </tr>
+        <tr>
           <th style="width: 40%">集荷元住所（都道府県）</th>
           <td>
             <span th:each="prefecture : ${prefectures}" th:text="${prefecture.prefectureName}" th:if="${prefecture.prefectureId}==*{oldPrefectureId}">東京</span>
