@@ -6,6 +6,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 /**
  * 顧客が入力する見積もり情報を保持するクラス。
@@ -59,6 +61,12 @@ public class UserOrderForm {
     @NotBlank(message = "郵便番号が入力されていません")
     @Size(min = 8, max=8, message = "有効な郵便番号を入力してください")
     private String postcode;
+    
+    @NotBlank(message = "お引っ越し月が入力されていません")
+    @Numeric(message = "お引っ越し月が半角数字で入力されていません")
+    @Max(value = 12, message = "お引っ越し月は12以下の値で入力してください")
+    @Min(value = 1, message = "お引っ越し月は1以上の値で入力してください")
+    private String month;
 
     public String getCustomerName() {
         return customerName;
@@ -162,5 +170,13 @@ public class UserOrderForm {
 
     public void setPostcode(String postcode) {
         this.postcode = postcode;
+    }
+
+    public String getMonth(){
+        return month;
+    }
+
+    public void setMonth(String month){
+        this.month = month;
     }
 }
