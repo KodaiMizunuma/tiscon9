@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>見積の計算方法（詳細）</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" th:href="@{http://fonts.googleapis.com/css?family=Exo:900}"
+  href="http://fonts.googleapis.com/css?family=Exo:900"/>
+  <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css">
+</head>
+<body>
+
+<nav th:insert="header.html :: header"></nav>
+  <div class="jumbotron">
+    <div class="company-name">tiscon moving company</div>
+    <div class="bland-message">未来の景色に鮮やかな彩りを</div>
+  </div>
+
+  <div class="text-center">
+    <div class="contain">
+      <div class="index">お見積り金額の計算方法について</div>
+        <div class="infomation">お見積り金額は、以下の方法で算出されます。</div>
+        <div class="main">（距離[km]×100[円/km]+トラック輸送費[円]）× 季節係数 + オプション代金</div>
+        <div class="kome">※ 季節係数について<br>
+          3~4月 : 1.5<br>
+          9月 : 1.2<br>
+          その他 : 1
+        </div>
+      <div class="Topbutton">
+        <a class="btn btn-back" href="/" role="button">TOPへ戻る</a>
+      </div>
+    </div>
+  </div>
+  <script src="../js/jquery-3.5.1.min.js" th:src="@{/js/jquery-3.5.1.min.js}"></script>
+  <script src="../js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+  <script src="../js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

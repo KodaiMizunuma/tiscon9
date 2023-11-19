@@ -57,6 +57,15 @@ public class EstimateController {
     }
 
     /**
+     * 見積もり金額の計算方法の画面に遷移する。
+     */
+    @GetMapping("calculation")
+    String calculation(Model model) {
+        model.addAttribute("url","/calculation.html");
+        return "calculation";
+    }
+
+    /**
      * TOP画面に戻る。
      *
      * @param model 遷移先に連携するデータ
