@@ -5,6 +5,7 @@ import com.tiscon.validator.Numeric;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * 顧客が入力する見積もり情報を保持するクラス。
@@ -54,6 +55,10 @@ public class UserOrderForm {
 
     @NotNull
     private boolean washingMachineInstallation;
+
+    @NotBlank(message = "郵便番号が入力されていません")
+    @Size(min = 8, max=8, message = "有効な郵便番号を入力してください")
+    private String postcode;
 
     public String getCustomerName() {
         return customerName;
@@ -107,6 +112,10 @@ public class UserOrderForm {
         return newAddress;
     }
 
+    public String getPostcode() {
+        return postcode;
+    }
+
     public void setNewAddress(String newAddress) {
         this.newAddress = newAddress;
     }
@@ -149,5 +158,9 @@ public class UserOrderForm {
 
     public void setWashingMachineInstallation(boolean washingMachineInstallation) {
         this.washingMachineInstallation = washingMachineInstallation;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
     }
 }

@@ -40,6 +40,10 @@
         </div>
         <div class="sub-title">集荷元・お届け先</div>
         <div class="form-group">
+          <label for="postcode">郵便番号(半角数字ハイフンあり)</label>
+          <input type="text" id="postcode" name="postcode" th:field="*{postcode}" class="form-control" value="687-0987"/>
+        </div>
+        <div class="form-group">
           <label for="oldPrefectureId">集荷元住所（都道府県）</label>
           <select id="oldPrefectureId" name="oldPrefectureId" class="form-control">
             <option th:each="prefecture : ${prefectures}" th:value="${prefecture.prefectureId}" th:field="*{oldPrefectureId}">[[${prefecture.prefectureName}]]</option>
