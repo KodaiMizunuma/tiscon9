@@ -26,6 +26,7 @@
       この内容でお見積りする場合は、「概算お見積もりをする」ボタンを押してください。
     </div>
     <ul th:if="${#fields.hasErrors('all')}">
+      <!--変更箇所-->
       <div class="warning">
         <li th:each="err : ${#fields.errors('all')}" th:text="${err}"></li>
       </div>
